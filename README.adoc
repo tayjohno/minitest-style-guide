@@ -49,7 +49,7 @@ gem install rouge
 == A Living Document
 
 This guide is a work in progress - existing guidelines are constantly being improved, new guidelines are added, occasionally some guidelines
-would get removed.
+will get removed.
 
 == Layout
 
@@ -155,6 +155,7 @@ Use `assert_includes` to assert if the object is included in the collection.
 ----
 # bad
 assert(collection.include?(object))
+assert(object.in?(collection))
 
 # good
 assert_includes(collection, object)
@@ -169,6 +170,8 @@ Use `refute_includes` if the object is not included in the collection.
 # bad
 refute(collection.include?(object))
 assert(!collection.include?(object))
+refute(object.in?(collection))
+assert(!object.in?(collection))
 
 # good
 refute_includes(collection, object)
